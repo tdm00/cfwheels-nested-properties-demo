@@ -4,6 +4,8 @@
 
 		<!--- Tell Wheels to use the `tbl_contact_person` table in the database for the `contact` model instead of the default (which would be `contacts`) --->
 		<cfset table("tbl_contact_person")>
+		<!--- Tell Wheels that when we are referring to `id` in the CFML code, it should translate to the `contact_id` column when interacting with the database instead of the default (which would be the `id` column) --->
+		<cfset property(name="id", column="contact_id")>		
 		<!--- Tell Wheels that when we are referring to `firstname` in the CFML code, it should translate to the `Fname` column when interacting with the database instead of the default (which would be the `firstname` column) --->
 		<cfset property(name="firstname", column="Fname")>		
 		<!--- Tell Wheels that when we are referring to `lastname` in the CFML code, it should translate to the `Lname` column when interacting with the database instead of the default (which would be the `lastname` column) --->

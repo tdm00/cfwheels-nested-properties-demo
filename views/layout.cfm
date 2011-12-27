@@ -68,10 +68,11 @@
 			<div class="topbar">
 				<div class="fill">
 					<div class="container">
-						<a class="brand" href="##">Contacts</a>
+						#linkTo(controller="contacts", action="index", text="Contacts", class="brand")#
 						<ul class="nav">
-							<li class="active"><a href="##">Home</a></li>
-							<li><a href="##about">About</a></li>
+							<!--- <li class="active"><a href="##">Home</a></li> --->
+							<li>#linkTo(controller="contacts", action="index", text="Home")#</li>
+							<li>#linkTo(controller="contacts", action="about", text="About")#</li>
 						</ul>
 					</div>
 				</div>

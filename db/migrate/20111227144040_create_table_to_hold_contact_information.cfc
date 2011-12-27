@@ -24,7 +24,7 @@
       t = createTable(name='tbl_Contact_Person', primaryKey='contact_id');
       t.string(columnNames='Fname', null=true, limit='255');
       t.string(columnNames='Lname', null=true, limit='255');
-      t.string(columnNames='e-mail', null=true, limit='255');
+      t.string(columnNames='e_mail', null=true, limit='255');
       t.string(columnNames='job_title', null=true, limit='255');
       t.string(columnNames='company_name', null=true, limit='255');
       t.date(columnNames='created', default='', null=true);
@@ -35,7 +35,7 @@
   </cffunction>
   <cffunction name="down">
     <cfscript>
-      dropTable('tbl_Contact_Person');
+      dropTable('tbl_contact_person');
     </cfscript>
   </cffunction>
 </cfcomponent>

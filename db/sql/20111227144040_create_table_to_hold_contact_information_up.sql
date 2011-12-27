@@ -6,7 +6,7 @@ CREATE TABLE `tbl_contact_person` (
  `e_mail` VARCHAR(255),
  `job_title` VARCHAR(255),
  `company_name` VARCHAR(255),
- `created` DATE DEFAULT NULL,
- `updated` DATE DEFAULT NULL,
- `deleted` DATE DEFAULT NULL
+ `created` DATETIME DEFAULT NULL,
+ `updated` DATETIME DEFAULT NULL,
+ `deleted` DATETIME DEFAULT NULL
 );

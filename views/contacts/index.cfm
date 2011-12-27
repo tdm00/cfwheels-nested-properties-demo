@@ -3,15 +3,17 @@
 <div class="page-header">
 	<h1>Contact List</h1>
 </div>
+<cfoutput>
+	#includePartial(partial="/shared/status")#
+</cfoutput>
 <div class="row">
 	<div class="span10">
 		<table class="bordered-table zebra-striped condensed-table">
 			<thead>
 				<tr>
 					<th></th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Organization</th>
+					<th>Name</th>
+					<th>Company</th>
 					<th>Title</th>
 					<th>Email</th>
 				</tr>
@@ -20,11 +22,10 @@
 				<cfoutput query="contacts">
 					<tr>
 						<th>#contacts.currentRow#</th>
-						<td>#firstname#</td>
-						<td>#lastname#</td>
-						<td>#oroganization#</td>
+						<td>#linkTo(controller="contacts", action="show", key="#id#", text="#IIf(Len(Trim(firstname)) GT 0, DE('#firstname# #lastname#'), DE('#lastname#'))#")#</td>
+						<td>#company#</td>
 						<td>#title#</td>
-						<td>#email#</td>
+						<td>#IIf(Len(Trim(email)) GT 0, DE('#linkTo(text="#email#", href="mailto:#email#")#'), DE(''))#</td>
 					</tr>
 				</cfoutput>
 			</tbody>

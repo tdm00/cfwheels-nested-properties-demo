@@ -27,9 +27,9 @@
       t.string(columnNames='e_mail', null=true, limit='255');
       t.string(columnNames='job_title', null=true, limit='255');
       t.string(columnNames='company_name', null=true, limit='255');
-      t.date(columnNames='created', default='', null=true);
-      t.date(columnNames='updated', default='', null=true);
-      t.date(columnNames='deleted', default='', null=true);
+      t.datetime(columnNames='created', default='', null=true);
+      t.datetime(columnNames='updated', default='', null=true);
+      t.datetime(columnNames='deleted', default='', null=true);
       t.create();
     </cfscript>
   </cffunction>

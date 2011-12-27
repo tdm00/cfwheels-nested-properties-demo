@@ -11,7 +11,7 @@
 		<!--- Tell Wheels that when we are referring to `lastname` in the CFML code, it should translate to the `Lname` column when interacting with the database instead of the default (which would be the `lastname` column) --->
 		<cfset property(name="lastname", column="Lname")>		
 		<!--- Tell Wheels that when we are referring to `email` in the CFML code, it should translate to the `e-mail` column when interacting with the database instead of the default (which would be the `email` column) --->
-		<cfset property(name="email", column="e-mail")>		
+		<cfset property(name="email", column="e_mail")>		
 		<!--- Tell Wheels that when we are referring to `title` in the CFML code, it should translate to the `job_title` column when interacting with the database instead of the default (which would be the `title` column) --->
 		<cfset property(name="title", column="job_title")>		
 		<!--- Tell Wheels that when we are referring to `company` in the CFML code, it should translate to the `company_name` column when interacting with the database instead of the default (which would be the `company` column) --->

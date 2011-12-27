@@ -14,3 +14,10 @@ In completing the purpose of this application, as stated above, the following go
 1. How to use database tables that weren't setup to conform to the CFWheels naming conventions
 2. How to properly setup associations between models
 3. How to properly setup nested properties
+
+# SETUP
+You'll need to complete the following to use this application on your system
+
+1. Create a datasource named "lis"
+2. Copy the files to a folder named "np" underneath the root of your web root
+3. Run the database migration scripts

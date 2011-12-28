@@ -23,6 +23,10 @@
 		<!--- Tell Wheels that when we are referring to `deletedat` in the CFML code, it should translate to the `deleted` column when interacting with the database instead of the default (which would be the `deletedat` column) --->
 		<cfset property(name="deletedat", column="deleted")>		
 
+		<!--- Associations --->
+		<!--- Tell Wheels that a contact can have one or more locations, that if the contact is deleted to delete the locations associated with this contact, and to display the contact information even if they don't have any locations assocaited --->
+		<cfset hasMany(name="locations", dependent="delete", joinType="outer") >
+
 	</cffunction>	
 
 </cfcomponent>

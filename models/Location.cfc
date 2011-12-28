@@ -33,6 +33,9 @@
 		<!--- Tell Wheels that when we are referring to `deletedat` in the CFML code, it should translate to the `deleted` column when interacting with the database instead of the default (which would be the `deletedat` column) --->
 		<cfset property(name="deletedat", column="deleted")>		
 
+		<!--- Associations --->
+		<!--- Tell Wheels that a location is associated with a contact --->
+		<cfset belongsTo(name="contact") >
 	</cffunction>	
 
 </cfcomponent>

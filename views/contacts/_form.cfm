@@ -64,6 +64,7 @@
 						&nbsp;
 						#linkTo(text="Cancel", controller="contacts", action="index", class="btn")#
 						<cfif action EQ "update">
+							&nbsp;
 							#linkTo(text="Delete", controller="contacts", action="delete", key="#contact.id#", class="btn danger", confirm="Are you sure?")#
 						</cfif>
 					</div>

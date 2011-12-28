@@ -33,7 +33,7 @@
 	</div>
 	<div class="span4">
 		<cfoutput>
-			#linkTo(controller="contacts", action="new", text="Add New Contact", class="btn large primary")#
+			#linkTo(controller="contacts", action="new", text="Add New Contact", class="btn large primary pull-right")#
 		</cfoutput>
 	</div>
 </div>

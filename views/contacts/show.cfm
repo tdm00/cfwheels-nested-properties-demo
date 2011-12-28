@@ -45,10 +45,13 @@
 							</cfif>
 							#state# #zip#<br />
 							<cfif Len(Trim(phone)) GT 0>
-								<abbr title="Phone">P:</abbr> #phone#
+								<abbr title="Phone">P:</abbr> #phone#<br />
 							</cfif>
 							<cfif Len(Trim(fax)) GT 0>
-								<abbr title="Fax">F:</abbr> #fax#
+								<abbr title="Fax">F:</abbr> #fax#<br />
+							</cfif>
+							<cfif Len(Trim(locations.url)) GT 0>
+								<abbr title="URL">W:</abbr> #linkTo(href="#locations.url#")#<br />
 							</cfif>
 						</address>
 					</div>

@@ -12,8 +12,13 @@
 		<cfset locations = contact.locations(order="type ASC") >
 	</cffunction>
 
+	<!--- This is the action we call to create a new contact --->
 	<cffunction name="new" >
-		<cfset contact = model("Contact").new()>
+		<!--- Each contact can have three different addresses.  These are nested properties in a one-to-many relationship, which means they're held in memory as an array.  Here we will create this array structure --->
+		<cfset var newLocations = [ model("Location").new() ]>
+		<!--- <cfset ArrayAppend(newLocations, model("Location").new())> --->
+		<!--- Create a contact object based on the Contact model and include the location array we created above --->
+		<cfset contact = model("Contact").new(locations=newLocations)>
 	</cffunction>
 
 	<cffunction name="create" >
@@ -32,7 +37,8 @@
 	</cffunction>
 
 	<cffunction name="edit" >
-		<cfset contact = model("Contact").findByKey(key=params.key)>
+		<!--- Create a contact object based on the Contact model and populate it with the record values in the database based on the key value passed through the URL parameters.  Make sure to include our locations. --->
+		<cfset contact = model("Contact").findByKey(key=params.key, include="locations")>
 	</cffunction>
 
 	<cffunction name="update" >

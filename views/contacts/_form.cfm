@@ -59,16 +59,17 @@
 						</div>
 					</div><!-- /clearfix -->
 
-					<div class="actions">
-						<input type="submit" class="btn primary" value="Save changes">
-						&nbsp;
-						#linkTo(text="Cancel", controller="contacts", action="index", class="btn")#
-						<cfif action EQ "update">
-							&nbsp;
-							#linkTo(text="Delete", controller="contacts", action="delete", key="#contact.id#", class="btn danger", confirm="Are you sure?")#
-						</cfif>
-					</div>
 				</fieldset>
+				#includePartial(contact.locations)#
+				<div class="actions">
+					<input type="submit" class="btn primary" value="Save changes">
+					&nbsp;
+					#linkTo(text="Cancel", controller="contacts", action="index", class="btn")#
+					<cfif action EQ "update">
+						&nbsp;
+						#linkTo(text="Delete", controller="contacts", action="delete", key="#contact.id#", class="btn danger", confirm="Are you sure?")#
+					</cfif>
+				</div>
 			#endFormTag()#
 		</div>
 	</div><!-- /row -->

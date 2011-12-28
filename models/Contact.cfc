@@ -27,6 +27,9 @@
 		<!--- Tell Wheels that a contact can have one or more locations, that if the contact is deleted to delete the locations associated with this contact, and to display the contact information even if they don't have any locations assocaited --->
 		<cfset hasMany(name="locations", dependent="delete", joinType="outer") >
 
+		<!--- Nested Properties --->
+		<!--- Tell Wheels that the contact model will have nested properties for the locations associated with this contact --->
+		<cfset nestedProperties(associations="locations", allowDelete=true)>
 	</cffunction>	
 
 </cfcomponent>

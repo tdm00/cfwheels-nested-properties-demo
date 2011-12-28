@@ -9,6 +9,7 @@
 
 	<cffunction name="show" >
 		<cfset contact = model("Contact").findByKey(key=params.key)>
+		<cfset locations = contact.locations(order="type ASC") >
 	</cffunction>
 
 	<cffunction name="new" >

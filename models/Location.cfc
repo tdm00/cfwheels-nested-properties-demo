@@ -3,7 +3,7 @@
 		<!--- Object Property Definitions --->
 
 		<!--- Tell Wheels to use the `tbl_contact_person` table in the database for the `contact` model instead of the default (which would be `contacts`) --->
-		<cfset table("tblContactLocations")>
+		<cfset table("tblcontactlocations")>
 		<!--- Tell Wheels that when we are referring to `id` in the CFML code, it should translate to the `locationid` column when interacting with the database instead of the default (which would be the `id` column) --->
 		<cfset property(name="id", column="locationid")>		
 		<!--- Tell Wheels that when we are referring to `contactid` in the CFML code, it should translate to the `ContactIdFk` column when interacting with the database instead of the default (which would be the `contactid` column) --->
@@ -32,6 +32,9 @@
 		<cfset property(name="updatedat", column="updated")>		
 		<!--- Tell Wheels that when we are referring to `deletedat` in the CFML code, it should translate to the `deleted` column when interacting with the database instead of the default (which would be the `deletedat` column) --->
 		<cfset property(name="deletedat", column="deleted")>		
+		<!--- Tell Wheels that when we are referring to `type` in the CFML code, it should translate to the `location_type` column when interacting with the database instead of the default (which would be the `type` column) --->
+		<cfset property(name="type", column="location_type")>		
+
 
 		<!--- Associations --->
 		<!--- Tell Wheels that a location is associated with a contact --->

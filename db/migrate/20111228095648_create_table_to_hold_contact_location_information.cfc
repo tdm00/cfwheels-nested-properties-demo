@@ -18,15 +18,20 @@
       t.decimal(columnNames='hourlyWage', default='', null=true, precision='1', scale='2');
       t.date(columnNames='dateOfBirth', default='', null=true);
 --->
-<cfcomponent extends="np.plugins.dbmigrate.Migration" hint="create table to hold contact information">
+<cfcomponent extends="np.plugins.dbmigrate.Migration" hint="create table to hold contact location information">
   <cffunction name="up">
     <cfscript>
-      t = createTable(name='tbl_contact_person', primaryKey='contact_id');
-      t.string(columnNames='Fname', null=true, limit='255');
-      t.string(columnNames='Lname', null=true, limit='255');
-      t.string(columnNames='e_mail', null=true, limit='255');
-      t.string(columnNames='job_title', null=true, limit='255');
-      t.string(columnNames='company_name', null=true, limit='255');
+      t = createTable(name='tblContactLocations', primaryKey='locationid');
+      t.string(columnNames='ContactIdFk', null=true, limit='255');
+      t.string(columnNames='location_address_1', null=true, limit='255');
+      t.string(columnNames='location_address_2', null=true, limit='255');
+      t.string(columnNames='location_address_3', null=true, limit='255');
+      t.string(columnNames='location_city', null=true, limit='255');
+      t.string(columnNames='location_state', null=true, limit='40');
+      t.string(columnNames='location_zip', null=true, limit='15');
+      t.string(columnNames='location_phone', null=true, limit='25');
+      t.string(columnNames='location_fax', null=true, limit='25');
+      t.string(columnNames='location_website_url', null=true, limit='255');
       t.datetime(columnNames='created', default='', null=true);
       t.datetime(columnNames='updated', default='', null=true);
       t.datetime(columnNames='deleted', default='', null=true);
@@ -35,7 +40,7 @@
   </cffunction>
   <cffunction name="down">
     <cfscript>
-      dropTable('tbl_contact_person');
+      dropTable('tblContactLocations');
     </cfscript>
   </cffunction>
 </cfcomponent>

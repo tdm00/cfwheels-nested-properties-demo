@@ -19,9 +19,9 @@
 		Here we will create this array structure and populate it with the first record for the Home location --->
 		<cfset var newLocations = [ model("Location").new(type="Home") ]>
 		<!--- Now add another row to the array for the Work location --->
-		<cfset ArrayAppend(newLocations, model("Location").new(type="Work"))>
-		<!--- Finally add another row to the array for the Other location --->
 		<cfset ArrayAppend(newLocations, model("Location").new(type="Other"))>
+		<!--- Finally add another row to the array for the Other location --->
+		<cfset ArrayAppend(newLocations, model("Location").new(type="Work"))>
 		<!--- Create a contact object based on the Contact model and include the location array we created above --->
 		<cfset contact = model("Contact").new(locations=newLocations)>
 	</cffunction>

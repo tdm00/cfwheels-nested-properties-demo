@@ -7,7 +7,7 @@
 	#includePartial(partial="/shared/status")#
 </cfoutput>
 <div class="row">
-	<div class="span10">
+	<div class="span11">
 		<table class="bordered-table zebra-striped condensed-table">
 			<thead>
 				<tr>
@@ -31,7 +31,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="span4">
+	<div class="span3">
 		<cfoutput>
 			#linkTo(controller="contacts", action="new", text="Add New Contact", class="btn large primary pull-right")#
 		</cfoutput>

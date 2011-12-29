@@ -25,7 +25,7 @@
 			<hr />
 			<div class="row">
 				<cfoutput query="locations">
-					<cfif Len(Trim(address1)) GT 0 OR Len(Trim(address2)) GT 0 OR Len(Trim(address3)) GT 0>
+					<cfif Len(Trim(address1)) GT 0 OR Len(Trim(address2)) GT 0 OR Len(Trim(address3)) GT 0 OR Len(Trim(city)) GT 0 OR Len(Trim(state)) GT 0 OR Len(Trim(zip)) GT 0 OR Len(Trim(phone)) GT 0 OR Len(Trim(fax)) GT 0 OR Len(Trim(url)) GT 0>
 						<div class="span3">
 							<address>
 								<strong>#type#</strong><br />

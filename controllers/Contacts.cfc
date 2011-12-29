@@ -33,7 +33,7 @@
 		<!--- Verify that the contact creates successfully --->
 		<cfif contact.save()>
 			<cfset flashInsert(success="Well done!  The contact was created successfully.")>
-            		<cfset redirectTo(action="index")>
+            		<cfset redirectTo(controller="contacts", action="show", key=contact.id)>
 		<!--- Otherwise --->
 		<cfelse>
 			<cfset flashInsert(error="Oh snap!  There was an error adding the contact.")>
@@ -57,7 +57,7 @@
 			<cfset renderPage(action="form")>
 		<cfelse>
 			<cfset flashInsert(success="Updates saved successfully!")>
-			<cfset redirectTo(controller="contacts", action="index")>
+			<cfset redirectTo(controller="contacts", action="show", key=contact.id)>
 		</cfif>
 	</cffunction>
 

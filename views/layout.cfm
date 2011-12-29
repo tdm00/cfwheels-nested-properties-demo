@@ -71,7 +71,7 @@
 						#linkTo(controller="contacts", action="index", text="Contacts", class="brand")#
 						<ul class="nav">
 							<!--- <li class="active"><a href="##">Home</a></li> --->
-							<li>#linkTo(controller="contacts", action="index", text="Home")#</li>
+							<li>#linkTo(controller="contacts", action="index", text="Contacts")#</li>
 							<li>#linkTo(controller="contacts", action="about", text="About")#</li>
 						</ul>
 					</div>

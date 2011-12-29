@@ -8,5 +8,7 @@
 			<li>How to properly setup nested properties</li>
 		</ul>
 		<p>The source code for this application can be found at #linkTo(href="https://github.com/talltroym/cfwheels-nested-properties-demo")#</p>
+		<p>You can find more of the projects I work on at #linkTo(href="https://github.com/talltroym/")#</p>
+		<p>I blog about technology things I work with at #linkTo(href="http://chaptertwo.tumblr.com/")#</p>
 	</div>
 </cfoutput>

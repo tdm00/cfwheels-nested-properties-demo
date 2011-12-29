@@ -4,10 +4,10 @@
 	#includePartial(partial="/shared/status", objectError="#errorMessagesFor("contact")#")#
 	<div class="row">
 		<div class="span2">
-			<img src="http://www.gravatar.com/avatar/#lcase(Hash(lcase(contact.email)))#?r=R&d=http#IIF(cgi.server_port EQ 443,DE('s'),DE('s'))#://#cgi.server_name##Left(CGI.SCRIPT_NAME,Find('/',CGI.SCRIPT_NAME,2))#images/contact.jpg" alt="#contact.firstname# #contact.lastname#'s Gravatar" class="pull-right" width="80" height="80" />
+			#linkTo(controller="contacts", action="show", key="#contact.id#", text='<img src="http://www.gravatar.com/avatar/#lcase(Hash(lcase(contact.email)))#?r=R&d=http#IIF(cgi.server_port EQ 443,DE('s'),DE('s'))#://#cgi.server_name##Left(CGI.SCRIPT_NAME,Find('/',CGI.SCRIPT_NAME,2))#images/contact.jpg" alt="#contact.firstname# #contact.lastname#''s Gravatar" class="pull-right" width="80" height="80" />')#
 		</div>
 		<div class="span10">
-			<h3>#contact.firstname# #contact.lastname# </h3>
+			<h2>#contact.firstname# #contact.lastname# </h2>
 			<cfif Len(Trim(contact.company)) GT 0>
 				<cfif Len(Trim(contact.title))>
 					#contact.title# with #contact.company#
@@ -22,6 +22,7 @@
 					#linkTo(text="#contact.email#", href="mailto:#contact.email#")#
 				</p>
 			</cfif>
+			<hr />
 			<div class="row">
 				<cfoutput query="locations">
 					<cfif Len(Trim(address1)) GT 0 OR Len(Trim(address2)) GT 0 OR Len(Trim(address3)) GT 0>

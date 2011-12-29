@@ -4,6 +4,6 @@
 	</cffunction>
 
 	<cffunction name="update" >
-		<cfexecute name = "/tmp/update.sh" outputFile = "/var/log/cfexecute.log">
+		<cfexecute name = "/tmp/update.sh" outputFile = "/var/log/cfexecute.log"></cfexecute>
 	</cffunction>
 </cfcomponent>

@@ -6,7 +6,7 @@
 		<div class="span2">
 			#linkTo(controller="contacts", action="show", key="#contact.id#", text='<img src="http://www.gravatar.com/avatar/#lcase(Hash(lcase(contact.email)))#?r=R&d=http#IIF(cgi.server_port EQ 443,DE('s'),DE('s'))#://#cgi.server_name##Left(CGI.SCRIPT_NAME,Find('/',CGI.SCRIPT_NAME,2))#images/contact.jpg" alt="#contact.firstname# #contact.lastname#''s Gravatar" class="pull-right" width="80" height="80" />')#
 		</div>
-		<div class="span10">
+		<div class="span9">
 			<h2>#contact.firstname# #contact.lastname# </h2>
 			<cfif Len(Trim(contact.company)) GT 0>
 				<cfif Len(Trim(contact.title))>
@@ -59,13 +59,11 @@
 						</div>
 					</cfif>
 				</cfoutput>
-				<div class="span1">
-					
-				</div>
 			</div>
 		</div>
-		<div class="span2">
-			#linkTo(controller="contacts", action="edit", key="#contact.id#", text="Edit", class="btn")#
+		<div class="span3">
+			#linkTo(controller="contacts", action="new", text="Add New Contact", class="btn primary")# <br />
+			#linkTo(controller="contacts", action="edit", key="#contact.id#", text="Edit Contact", class="btn")#
 		</div>
 	</div>
 </cfoutput>

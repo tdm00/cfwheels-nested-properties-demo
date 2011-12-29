@@ -24,37 +24,39 @@
 			</cfif>
 			<div class="row">
 				<cfoutput query="locations">
-					<div class="span3">
-						<address>
-							<strong>#type#</strong><br />
-							<cfif Len(Trim(address1)) GT 0>
-								#address1#<br />
-							</cfif>
-							<cfif Len(Trim(address2)) GT 0>
-								#address2#<br />
-							</cfif>
-							<cfif Len(Trim(address3)) GT 0>
-								#address3#<br />
-							</cfif>
-							<cfif Len(Trim(city)) GT 0>
-								<cfif Len(Trim(state)) GT 0 Or Len(Trim(zip)) GT 0>
-									#city#,
-								<cfelse>
-									#city#
+					<cfif Len(Trim(address1)) GT 0 OR Len(Trim(address2)) GT 0 OR Len(Trim(address3)) GT 0>
+						<div class="span3">
+							<address>
+								<strong>#type#</strong><br />
+								<cfif Len(Trim(address1)) GT 0>
+									#address1#<br />
 								</cfif>
-							</cfif>
-							#state# #zip#<br />
-							<cfif Len(Trim(phone)) GT 0>
-								<abbr title="Phone">P:</abbr> #phone#<br />
-							</cfif>
-							<cfif Len(Trim(fax)) GT 0>
-								<abbr title="Fax">F:</abbr> #fax#<br />
-							</cfif>
-							<cfif Len(Trim(locations.url)) GT 0>
-								<abbr title="URL">W:</abbr> #linkTo(href="#locations.url#")#<br />
-							</cfif>
-						</address>
-					</div>
+								<cfif Len(Trim(address2)) GT 0>
+									#address2#<br />
+								</cfif>
+								<cfif Len(Trim(address3)) GT 0>
+									#address3#<br />
+								</cfif>
+								<cfif Len(Trim(city)) GT 0>
+									<cfif Len(Trim(state)) GT 0 Or Len(Trim(zip)) GT 0>
+										#city#,
+									<cfelse>
+										#city#
+									</cfif>
+								</cfif>
+								#state# #zip#<br />
+								<cfif Len(Trim(phone)) GT 0>
+									<abbr title="Phone">P:</abbr> #phone#<br />
+								</cfif>
+								<cfif Len(Trim(fax)) GT 0>
+									<abbr title="Fax">F:</abbr> #fax#<br />
+								</cfif>
+								<cfif Len(Trim(locations.url)) GT 0>
+									<abbr title="URL">W:</abbr> #linkTo(href="#locations.url#")#<br />
+								</cfif>
+							</address>
+						</div>
+					</cfif>
 				</cfoutput>
 				<div class="span1">
 					

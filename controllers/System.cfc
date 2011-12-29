@@ -5,5 +5,6 @@
 
 	<cffunction name="update" >
 		<cfexecute name = "/tmp/update.sh" outputFile = "/var/log/cfexecute.log"></cfexecute>
+		<cfset redirectTo(action="index")>
 	</cffunction>
 </cfcomponent>

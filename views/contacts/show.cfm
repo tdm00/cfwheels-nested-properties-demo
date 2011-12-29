@@ -12,10 +12,10 @@
 				<cfif Len(Trim(contact.title))>
 					#contact.title# with #contact.company#
 				<cfelse>
-					<h4>#contact.company#</h4>
+					#contact.company#
 				</cfif>
 			<cfelse>
-				<h4>#contact.title#</h4>
+				#contact.title#
 			</cfif>
 			<cfif Len(Trim(contact.email)) GT 0>
 				<p>

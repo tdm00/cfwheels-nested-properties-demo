@@ -4,7 +4,7 @@
 	</cffunction>	
 
 	<cffunction name="index" >
-		<cfset contacts = model("Contact").findAll()>
+		<cfset contacts = model("Contact").findAll(order="updatedat DESC")>
 	</cffunction>
 
 	<cffunction name="show" >
